@@ -13,7 +13,7 @@ import FroalaEditorComponent from 'react-froala-wysiwyg';
 const CreatePost = ()=>{
     const [html,setHtml] = useState("");
     const [title,setTitle] = useState("");
-    
+
     const onTitleChange = (e)=>{
         setTitle(e.target.value);
     } 
@@ -24,6 +24,27 @@ const CreatePost = ()=>{
 
     const handleSubmit = ()=>{
         console.log(title,html);
+        if(!title || !html){
+            alert("Title or content is missing!")
+        }
+        else{
+            const authHeader = {"Authorization":`Token ${localStorage.getItem("authToken")}`,
+                                'Content-Type': 'application/json'}
+            const body = {
+                "title":title,
+                "description": html
+            }
+            try{
+                let resp = fetch("http://localhost:8000/test/blogs/",{
+                    method: "POST",
+                    headers: authHeader,
+                    body: JSON.stringify(body)
+                })
+                alert("successfully posted!");
+            }catch(e){
+                console.log(e);
+            }
+        }
     }
 
     const config = {

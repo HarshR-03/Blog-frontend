@@ -39,8 +39,7 @@ const BlogPage = ()=>{
         <div style={pageStyle}>
             <div style={contentStyle}>
                 {content ? <div><h1>{content.title}</h1>
-                            <div>
-                                {content.description}
+                            <div dangerouslySetInnerHTML={{ __html: content.description }}>
                             </div>
                             </div>
                 :
