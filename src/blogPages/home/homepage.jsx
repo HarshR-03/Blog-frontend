@@ -31,7 +31,7 @@ const Home = ()=>{
       console.log(authHeader);      
       try{
         let data = [];
-        data = await fetch("http://localhost:8000/test/blogs/", {headers:authHeader})
+        data = await fetch("http://zekeyeager18.pythonanywhere.com/test/blogs/", {headers:authHeader})
         data = await data.json();
         console.log(data);
         setBlogsArray(data);

@@ -12,7 +12,7 @@ const Modal = ({ isOpen, onClose}) => {
     setError(null); // Clear any previous errors
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/test/login/', { // Replace with your backend endpoint
+      const response = await fetch('http://zekeyeager18.pythonanywhere.com/test/login/', { // Replace with your backend endpoint
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

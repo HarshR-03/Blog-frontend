@@ -12,7 +12,7 @@ const BlogPage = ()=>{
         console.log(authHeader);      
         try{
             let data = [];
-            data = await fetch(`http://localhost:8000/test/blogs/${id}`, {headers:authHeader})
+            data = await fetch(`http://zekeyeager18.pythonanywhere.com/test/blogs/${id}`, {headers:authHeader})
             data = await data.json();
             console.log(data);
             setcontent(data);

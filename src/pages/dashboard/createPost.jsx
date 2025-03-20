@@ -35,7 +35,7 @@ const CreatePost = ()=>{
                 "description": html
             }
             try{
-                let resp = fetch("http://localhost:8000/test/blogs/",{
+                let resp = fetch("http://zekeyeager18.pythonanywhere.com/test/blogs/",{
                     method: "POST",
                     headers: authHeader,
                     body: JSON.stringify(body)
